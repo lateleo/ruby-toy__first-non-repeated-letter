@@ -9,6 +9,25 @@
 
 
 def find_first_non_repeated_letter(str)
-  #write your method here
-  return true
+    chars_ary = str.chars
+    ct1 = 0
+    chars_ary.each do |elem1|
+        ct1 = ct1.next
+        ct2 = 0
+        var1 = 0
+        chars_ary.each do |elem2|
+            ct2 = ct2.next
+            if elem1 == elem2
+                if ct2 == ct1.next
+                   var1 = var1.next
+                elsif ct1 == ct2.next
+                   var1 = var1.next
+                end
+            end
+        end
+        if var1 < 1
+            return elem1
+        end
+    end
+    return nil
 end
